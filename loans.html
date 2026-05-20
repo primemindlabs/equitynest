@@ -265,7 +265,7 @@
       .loan-hero-inner { padding: 3rem 1.5rem; }
       .loan-hero-inner h2 { font-size: 2.4rem; }
       .loan-hero-num { display: none; }
-      .loan-nav { padding: 0 1rem; }
+      .loan-nav { padding: 0 1rem; -webkit-overflow-scrolling: touch; }
       .cta-strip { flex-direction: column; align-items: flex-start; gap: 2rem; padding: 4rem 1.5rem; }
       .cta-strip::before { display: none; }
       .loan-hero:nth-of-type(even) .loan-hero-inner { margin-left: 0; }
@@ -280,6 +280,15 @@
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; }
       .footer-disclaimer { text-align: left; }
+    }
+    @media (max-width: 480px) {
+      .page-hero-inner h1 { font-size: 2.6rem; }
+      .loan-hero-inner h2 { font-size: 2rem; }
+      .loan-hero-inner { padding: 2.5rem 1.2rem; }
+      .loan-nav a { font-size: 0.68rem; padding: 0 0.8rem; }
+      .page-hero { padding: 6rem 1.2rem 2.5rem; }
+      .cta-strip { padding: 3.5rem 1.2rem; }
+      footer { padding: 3.5rem 1.2rem 2rem; }
     }
   </style>
 </head>
@@ -579,11 +588,16 @@ for Real Investors.</h1>
     document.querySelectorAll('.loan-hero').forEach(el => observer.observe(el));
 
     // Hamburger
-    document.getElementById('hamburger').addEventListener('click', () => {
+    (function() {
+      const hamburger = document.getElementById('hamburger');
       const links = document.querySelector('.nav-links');
-      if (links.style.display === 'flex') { links.style.display = 'none'; }
-      else { links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--white);padding:2rem;gap:1.5rem;border-bottom:1px solid var(--border-light);z-index:999;'; }
-    });
+      const OPEN_STYLE = 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:var(--white);padding:2rem 1.8rem;gap:1.6rem;border-bottom:1px solid var(--border-light);z-index:999;box-shadow:0 8px 32px rgba(0,0,0,0.1);';
+      function closeMenu() { links.removeAttribute('style'); links.setAttribute('data-open','false'); }
+      function openMenu()  { links.style.cssText = OPEN_STYLE; links.setAttribute('data-open','true'); }
+      hamburger.addEventListener('click', e => { e.stopPropagation(); links.getAttribute('data-open')==='true' ? closeMenu() : openMenu(); });
+      document.addEventListener('click', () => { if (links.getAttribute('data-open')==='true') closeMenu(); });
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    })();
   </script>
 </body>
 </html>

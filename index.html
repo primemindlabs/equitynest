@@ -617,6 +617,11 @@
       .hero-content { padding: 0 1.8rem; padding-top: 80px; }
       .hero h1 { font-size: 3.2rem; }
       .hero-scroll { display: none; }
+      .hero-stats { flex-wrap: wrap; gap: 1.5rem; padding-top: 1.8rem; }
+      .hero-stat { padding-right: 0; padding-left: 0 !important; border-right: none; border-bottom: 1px solid rgba(201,169,110,0.22); padding-bottom: 1.2rem; width: 100%; }
+      .hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
+      .hero-buttons { flex-direction: column; gap: 0.8rem; }
+      .btn-primary, .btn-outline-white { width: 100%; text-align: center; }
       .services-section, .serve-section, .process-section,
       .testimonials-section, .cta-strip, footer { padding: 5rem 1.8rem; }
       .stats-band, .feature-strip { padding: 3.5rem 1.8rem; }
@@ -628,6 +633,15 @@
       .footer-bottom { flex-direction: column; }
       .footer-disclaimer { text-align: left; }
       .cta-strip::before { display: none; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.6rem; }
+      .hero-content { padding: 0 1.2rem; padding-top: 80px; }
+      .services-section, .serve-section, .process-section,
+      .testimonials-section, .cta-strip, footer { padding: 4rem 1.2rem; }
+      .stats-band, .feature-strip { padding: 3rem 1.2rem; }
+      .stat-number { font-size: 3.2rem; }
+      .marquee-band { padding: 1.2rem 0; }
     }
   </style>
 </head>
@@ -1051,18 +1065,16 @@
     })();
 
     // ── Mobile hamburger
-    const hamburger = document.getElementById('hamburger');
-    hamburger.addEventListener('click', () => {
+    (function() {
+      const hamburger = document.getElementById('hamburger');
       const links = document.querySelector('.nav-links');
-      const open = links.getAttribute('data-open') === 'true';
-      if (open) {
-        links.removeAttribute('style');
-        links.setAttribute('data-open', 'false');
-      } else {
-        links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:80px;left:0;right:0;background:#fff;padding:2rem 1.8rem;gap:1.6rem;border-bottom:1px solid #e8e2d8;z-index:999;box-shadow:0 8px 32px rgba(0,0,0,0.1);';
-        links.setAttribute('data-open', 'true');
-      }
-    });
+      const OPEN_STYLE = 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:var(--white);padding:2rem 1.8rem;gap:1.6rem;border-bottom:1px solid var(--border-light);z-index:999;box-shadow:0 8px 32px rgba(0,0,0,0.1);';
+      function closeMenu() { links.removeAttribute('style'); links.setAttribute('data-open','false'); }
+      function openMenu()  { links.style.cssText = OPEN_STYLE; links.setAttribute('data-open','true'); }
+      hamburger.addEventListener('click', e => { e.stopPropagation(); links.getAttribute('data-open')==='true' ? closeMenu() : openMenu(); });
+      document.addEventListener('click', () => { if (links.getAttribute('data-open')==='true') closeMenu(); });
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    })();
 
     // ── Hero: keep bg parallax subtle on scroll
     const heroBg = document.querySelector('.hero-bg');
