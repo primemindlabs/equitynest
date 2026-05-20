@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Non-QM & DSCR Loan Resources | EquityNest Capital Blog</title>
+  <meta name="description" content="Expert guides on DSCR loans, non-QM mortgages, fix and flip financing, and real estate investing. EquityNest Capital blog for serious investors.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.equitynestcapital.com/blog">
+  <meta property="og:title" content="Blog | EquityNest Capital">
+  <meta property="og:description" content="Expert guides on DSCR loans, non-QM mortgages, and real estate investing for serious investors.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.equitynestcapital.com/blog">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0d0d0d; --near-black: #1a1a1a; --charcoal: #2c2c2c;
+      --soft-gray: #6b6b6b; --gold: #c9a96e; --gold-light: #d4b483;
+      --gold-dark: #a8893a; --cream: #faf6ef; --off-white: #f0ece3;
+      --white: #ffffff; --border-light: #e8e2d8;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--charcoal); background: var(--white); overflow-x: hidden; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--border-light); padding: 0 4rem; height: 72px; display: flex; align-items: center; justify-content: space-between; transition: box-shadow 0.3s ease; }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+    .nav-logo { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; line-height: 1; }
+    .nav-logo-main { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; }
+    .nav-logo-main span.equity { color: var(--charcoal); }
+    .nav-logo-main span.nest { color: var(--gold); }
+    .nav-logo-sub { display: flex; align-items: center; gap: 6px; margin-top: 3px; }
+    .nav-logo-sub hr { border: none; border-top: 1px solid var(--gold); width: 18px; }
+    .nav-logo-sub span { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 2.4rem; list-style: none; }
+    .nav-links a { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; color: var(--charcoal); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a.active { color: var(--gold); }
+    .btn-nav { background: var(--gold); color: var(--black); padding: 0.6rem 1.4rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); border-radius: 2px; transition: background 0.2s; }
+    .btn-nav:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: var(--white); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--charcoal); }
+
+    .page-hero { background: var(--black); padding: 10rem 6rem 6rem; min-height: 46vh; display: flex; flex-direction: column; justify-content: flex-end; }
+    .section-label-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+    .section-label-row hr { border: none; border-top: 1px solid var(--gold); width: 32px; }
+    .section-label { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+    .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(3rem, 5vw, 5rem); line-height: 1.05; color: var(--white); white-space: pre-line; margin-bottom: 1rem; }
+    .page-hero p { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 300; color: rgba(250,246,239,0.7); max-width: 500px; line-height: 1.75; }
+
+    /* BLOG POSTS */
+    .blog-section { padding: 7rem 6rem; background: var(--white); }
+    .blog-post-card {
+      display: grid; grid-template-columns: 380px 1fr;
+      border: 1px solid var(--border-light); margin-bottom: 2.5rem;
+      transition: border-color 0.25s; overflow: hidden;
+    }
+    .blog-post-card:hover { border-color: var(--gold); }
+    .blog-post-card:last-child { margin-bottom: 0; }
+    .blog-card-image { overflow: hidden; }
+    .blog-card-image img { width: 100%; height: 100%; object-fit: cover; min-height: 300px; transition: transform 0.5s ease; display: block; }
+    .blog-post-card:hover .blog-card-image img { transform: scale(1.03); }
+    .blog-card-content { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+    .blog-category { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+    .blog-card-content h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.75rem; color: var(--charcoal); line-height: 1.25; margin-bottom: 1rem; }
+    .blog-card-content p { font-family: 'Inter', sans-serif; font-size: 0.87rem; font-weight: 300; color: var(--soft-gray); line-height: 1.8; margin-bottom: 1.5rem; }
+    .blog-meta { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .blog-date { font-family: 'Inter', sans-serif; font-size: 0.73rem; font-weight: 300; color: var(--soft-gray); }
+    .blog-read-time { font-family: 'Inter', sans-serif; font-size: 0.73rem; font-weight: 300; color: var(--soft-gray); }
+    .blog-link { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: color 0.2s; }
+    .blog-link:hover { color: var(--gold-dark); border-color: var(--gold-dark); }
+
+    .cta-strip { background: var(--black); padding: 6rem 6rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(201,169,110,0.15); }
+    .cta-strip h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 3rem; color: var(--white); max-width: 500px; line-height: 1.15; }
+    .cta-strip-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
+    .btn-gold-large { background: var(--gold); color: var(--black); padding: 1rem 2.4rem; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); border-radius: 2px; transition: background 0.2s; }
+    .btn-gold-large:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
+    .cta-email { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 300; color: rgba(250,246,239,0.6); text-decoration: none; transition: color 0.2s; }
+    .cta-email:hover { color: var(--gold); }
+
+    footer { background: var(--black); border-top: 1px solid rgba(201,169,110,0.25); padding: 5rem 6rem 3rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 4rem; margin-bottom: 4rem; }
+    .footer-brand .footer-tagline { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: rgba(250,246,239,0.5); margin-top: 1rem; font-weight: 300; }
+    .footer-brand .footer-email { display: block; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 300; color: var(--gold); text-decoration: none; margin-top: 0.8rem; }
+    .footer-col h4 { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 300; color: rgba(250,246,239,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-cta p { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 300; color: rgba(250,246,239,0.55); line-height: 1.7; margin-bottom: 1.2rem; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; }
+    .footer-copyright { font-family: 'Inter', sans-serif; font-size: 0.73rem; font-weight: 300; color: rgba(250,246,239,0.35); }
+    .footer-disclaimer { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 300; color: rgba(250,246,239,0.25); max-width: 600px; line-height: 1.6; text-align: right; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.15s; }
+    .reveal-delay-2 { transition-delay: 0.3s; }
+
+    @media (max-width: 1024px) {
+      nav { padding: 0 2rem; }
+      .page-hero { padding: 8rem 3rem 4rem; }
+      .blog-section, .cta-strip, footer { padding-left: 3rem; padding-right: 3rem; }
+      .blog-post-card { grid-template-columns: 280px 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .page-hero { padding: 7rem 1.5rem 3rem; min-height: 40vh; }
+      .blog-section { padding: 4rem 1.5rem; }
+      .blog-post-card { grid-template-columns: 1fr; }
+      .blog-card-image img { min-height: 220px; }
+      .blog-card-content { padding: 1.8rem; }
+      .cta-strip { flex-direction: column; align-items: flex-start; gap: 2rem; padding: 4rem 1.5rem; }
+      .cta-strip-right { align-items: flex-start; }
+      footer { padding: 4rem 1.5rem 2rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; }
+      .footer-disclaimer { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="main-nav">
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-main"><span class="equity">EQUITY</span><span class="nest">NEST</span></div>
+      <div class="nav-logo-sub"><hr><span>CAPITAL</span><hr></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../loans.html">Loan Products</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="index.html" class="active">Blog</a></li>
+      <li><a href="../contact.html" class="btn-nav">Apply Now</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="section-label-row"><hr><span class="section-label">Resources</span></div>
+    <h1>Insights for the
+Smart Investor.</h1>
+    <p>Practical guides on DSCR loans, non-QM financing, and real estate investment strategy, written by people who work these deals every day.</p>
+  </div>
+
+  <section class="blog-section">
+    <div class="blog-post-card reveal">
+      <div class="blog-card-image">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&q=80&fit=crop" alt="DSCR loans complete guide">
+      </div>
+      <div class="blog-card-content">
+        <span class="blog-category">DSCR Loans</span>
+        <h2>DSCR Loans: The Complete Guide for Real Estate Investors (2026)</h2>
+        <div class="blog-meta">
+          <span class="blog-date">May 15, 2026</span>
+          <span class="blog-read-time">12 min read</span>
+        </div>
+        <p>Everything you need to know about DSCR loans, including how the ratio is calculated, what qualifies, which properties are eligible, and how to apply. The definitive resource for investors building rental portfolios without W-2 income verification.</p>
+        <a href="dscr-loans-complete-guide.html" class="blog-link">Read Article</a>
+      </div>
+    </div>
+
+    <div class="blog-post-card reveal reveal-delay-1">
+      <div class="blog-card-image">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=500&q=80&fit=crop" alt="Non-QM loans explained">
+      </div>
+      <div class="blog-card-content">
+        <span class="blog-category">Non-QM Lending</span>
+        <h2>Non-QM Loans Explained: What They Are and Who Should Use Them</h2>
+        <div class="blog-meta">
+          <span class="blog-date">May 8, 2026</span>
+          <span class="blog-read-time">10 min read</span>
+        </div>
+        <p>Non-QM loans open the door for self-employed borrowers, investors, and business owners who don't fit conventional mortgage guidelines. We break down how they work, who benefits, and how to find the right program for your situation.</p>
+        <a href="non-qm-loans-explained.html" class="blog-link">Read Article</a>
+      </div>
+    </div>
+
+    <div class="blog-post-card reveal reveal-delay-2">
+      <div class="blog-card-image">
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=500&q=80&fit=crop" alt="Airbnb STR DSCR loans">
+      </div>
+      <div class="blog-card-content">
+        <span class="blog-category">Short-Term Rentals</span>
+        <h2>Airbnb and Short-Term Rental DSCR Loans: Finance Your STR Portfolio</h2>
+        <div class="blog-meta">
+          <span class="blog-date">April 29, 2026</span>
+          <span class="blog-read-time">11 min read</span>
+        </div>
+        <p>Short-term rentals generate strong cash flow, but most lenders don't know how to underwrite them. Here's how DSCR loans work for Airbnb and vacation rental properties, what income documentation is needed, and which markets are best suited for STR investing.</p>
+        <a href="airbnb-str-dscr-loans.html" class="blog-link">Read Article</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2 class="reveal">Ready to put these strategies to work?</h2>
+    <div class="cta-strip-right reveal">
+      <a href="../contact.html" class="btn-gold-large">Apply Now</a>
+      <a href="mailto:info@equitynestcapital.com" class="cta-email">info@equitynestcapital.com</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo" style="text-decoration:none;">
+          <div class="nav-logo-main" style="color:var(--cream);"><span style="color:rgba(250,246,239,0.9);">EQUITY</span><span style="color:var(--gold);">NEST</span></div>
+          <div class="nav-logo-sub"><hr><span>CAPITAL</span><hr></div>
+        </a>
+        <p class="footer-tagline">Where capital finds a home.</p>
+        <a href="mailto:info@equitynestcapital.com" class="footer-email">info@equitynestcapital.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Loan Programs</h4>
+        <ul>
+          <li><a href="../loans.html#dscr">DSCR Loans</a></li>
+          <li><a href="../loans.html#fix-flip">Fix &amp; Flip</a></li>
+          <li><a href="../loans.html#commercial">Commercial RE</a></li>
+          <li><a href="../loans.html#sba">SBA Loans</a></li>
+          <li><a href="../loans.html#str">Airbnb / STR</a></li>
+          <li><a href="../loans.html#bank-statement">Bank Statement</a></li>
+          <li><a href="../loans.html#cash-out">Cash-Out Refi</a></li>
+          <li><a href="../loans.html#hard-money">Hard Money</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../contact.html">Apply Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-cta footer-col">
+        <h4>Get Pre-Qualified</h4>
+        <p>Same-day pre-qualification available for most programs. Tell us about your deal and we'll find your path to funding.</p>
+        <a href="../contact.html" class="btn-gold-large">Start Application</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 EquityNest Capital. All rights reserved.</p>
+      <p class="footer-disclaimer">EquityNest Capital originates business-purpose loans only. All loans are for investment and commercial purposes. Lending available in 38 states. Not all borrowers will qualify. This is not an offer to extend credit.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      if (links.style.display === 'flex') { links.style.display = 'none'; }
+      else { links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--white);padding:2rem;gap:1.5rem;border-bottom:1px solid var(--border-light);z-index:999;'; }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About EquityNest Capital | Non-QM Mortgage Broker for Investors</title>
+  <meta name="description" content="EquityNest Capital is a non-QM mortgage brokerage built to serve real estate investors and business owners who need flexible financing solutions. We manage every loan start to finish.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.equitynestcapital.com/about">
+  <meta property="og:title" content="About EquityNest Capital | Non-QM Mortgage Broker for Investors">
+  <meta property="og:description" content="Learn about our story, values, and commitment to funding real estate investors and business owners across 38 states.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.equitynestcapital.com/about">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0d0d0d; --near-black: #1a1a1a; --charcoal: #2c2c2c;
+      --soft-gray: #6b6b6b; --gold: #c9a96e; --gold-light: #d4b483;
+      --gold-dark: #a8893a; --cream: #faf6ef; --off-white: #f0ece3;
+      --white: #ffffff; --border-light: #e8e2d8;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--charcoal); background: var(--white); overflow-x: hidden; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--border-light); padding: 0 4rem; height: 72px; display: flex; align-items: center; justify-content: space-between; transition: box-shadow 0.3s ease; }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+    .nav-logo { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; line-height: 1; }
+    .nav-logo-main { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; }
+    .nav-logo-main span.equity { color: var(--charcoal); }
+    .nav-logo-main span.nest { color: var(--gold); }
+    .nav-logo-sub { display: flex; align-items: center; gap: 6px; margin-top: 3px; }
+    .nav-logo-sub hr { border: none; border-top: 1px solid var(--gold); width: 18px; }
+    .nav-logo-sub span { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 2.4rem; list-style: none; }
+    .nav-links a { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; color: var(--charcoal); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a.active { color: var(--gold); }
+    .btn-nav { background: var(--gold); color: var(--black); padding: 0.6rem 1.4rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); border-radius: 2px; transition: background 0.2s; }
+    .btn-nav:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: var(--white); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--charcoal); }
+
+    /* CINEMATIC STORY HERO */
+    .page-hero {
+      position: relative; overflow: hidden;
+      min-height: 92vh; display: flex; align-items: flex-end;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=1600&q=85&fit=crop&crop=top');
+      background-size: cover; background-position: center 18%;
+      animation: storyKenBurns 16s ease-out both;
+    }
+    @keyframes storyKenBurns {
+      from { transform: scale(1.07); }
+      to   { transform: scale(1.0); }
+    }
+    .page-hero-overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to right, rgba(13,13,13,0.91) 0%, rgba(13,13,13,0.68) 52%, rgba(13,13,13,0.28) 100%),
+        linear-gradient(to top, rgba(13,13,13,0.72) 0%, transparent 50%);
+    }
+    .page-hero-grain {
+      position: absolute; inset: 0; opacity: 0.026;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 200px 200px; pointer-events: none;
+    }
+    .page-hero-inner {
+      position: relative; z-index: 1;
+      padding: 5rem 6rem 5rem;
+      max-width: 740px;
+    }
+    .section-label-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem; }
+    .section-label-row hr { border: none; border-top: 1px solid var(--gold); width: 32px; }
+    .section-label { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+    .page-hero-inner h1 {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: clamp(3rem, 5vw, 5.2rem); line-height: 1.06;
+      color: var(--white); margin-bottom: 1.8rem;
+    }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+      font-style: italic; font-weight: 300;
+      color: rgba(250,246,239,0.78); line-height: 1.55;
+      margin-bottom: 3.5rem; max-width: 500px;
+    }
+    .hero-credential-strip {
+      display: flex; align-items: center; gap: 1rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(201,169,110,0.28);
+    }
+    .hero-credential-strip span {
+      font-family: 'Inter', sans-serif; font-size: 0.7rem;
+      font-weight: 500; letter-spacing: 0.16em;
+      text-transform: uppercase; color: rgba(250,246,239,0.62);
+    }
+    .hero-cred-dot { color: var(--gold) !important; font-size: 0.45rem; opacity: 0.7; letter-spacing: 0 !important; }
+
+    /* ABOUT STORY SECTION */
+    .about-story { background: var(--white); padding: 9rem 6rem; }
+    .story-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 72px 1fr; gap: 0 4rem; align-items: start; }
+    .story-quote-mark {
+      font-family: 'Cormorant Garamond', serif; font-size: 10rem;
+      font-weight: 300; color: var(--gold); line-height: 0.72;
+      padding-top: 0.6rem; opacity: 0.45; user-select: none;
+    }
+    .story-body p {
+      font-family: 'Inter', sans-serif; font-size: 1.08rem; font-weight: 300;
+      color: var(--charcoal); line-height: 2.05; margin-bottom: 1.7rem;
+    }
+    .story-body p:last-child { margin-bottom: 0; }
+
+    /* VALUES */
+    .values-section { background: var(--cream); padding: 8rem 6rem; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+    .values-section > .section-label-row { margin-bottom: 1rem; }
+    .values-section > h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.2rem, 3.5vw, 3rem); color: var(--charcoal); margin-bottom: 3.5rem; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+    .value-card { border-top: 1px solid var(--gold); padding-top: 1.5rem; }
+    .value-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.8rem; }
+    .value-card p { font-family: 'Inter', sans-serif; font-size: 0.87rem; font-weight: 300; color: var(--soft-gray); line-height: 1.85; }
+
+    /* CREDENTIALS */
+    .credentials-band { background: var(--black); padding: 4rem 6rem; border-top: 1px solid rgba(201,169,110,0.15); }
+    .credentials-inner { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; }
+    .credential-item { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,246,239,0.65); padding: 0 2.5rem; }
+    .credential-sep { color: var(--gold); font-size: 0.6rem; opacity: 0.5; }
+
+    /* FULL WIDTH IMAGE */
+    .mission-image { position: relative; height: 520px; overflow: hidden; }
+    .mission-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5); }
+    .mission-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem; }
+    .mission-overlay h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.5rem, 4vw, 4rem); color: var(--white); line-height: 1.15; margin-bottom: 1rem; }
+    .mission-overlay p { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 300; color: rgba(250,246,239,0.75); max-width: 560px; line-height: 1.75; }
+
+    /* CTA STRIP */
+    .cta-strip { background: var(--black); padding: 6rem 6rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(201,169,110,0.15); }
+    .cta-strip h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 3rem; color: var(--white); max-width: 500px; line-height: 1.15; }
+    .cta-strip-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
+    .btn-gold-large { background: var(--gold); color: var(--black); padding: 1rem 2.4rem; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); border-radius: 2px; transition: background 0.2s; }
+    .btn-gold-large:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
+    .cta-email { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 300; color: rgba(250,246,239,0.6); text-decoration: none; transition: color 0.2s; }
+    .cta-email:hover { color: var(--gold); }
+
+    footer { background: var(--black); border-top: 1px solid rgba(201,169,110,0.25); padding: 5rem 6rem 3rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 4rem; margin-bottom: 4rem; }
+    .footer-brand .footer-tagline { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: rgba(250,246,239,0.5); margin-top: 1rem; font-weight: 300; }
+    .footer-brand .footer-email { display: block; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 300; color: var(--gold); text-decoration: none; margin-top: 0.8rem; }
+    .footer-col h4 { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 300; color: rgba(250,246,239,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-cta p { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 300; color: rgba(250,246,239,0.55); line-height: 1.7; margin-bottom: 1.2rem; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; }
+    .footer-copyright { font-family: 'Inter', sans-serif; font-size: 0.73rem; font-weight: 300; color: rgba(250,246,239,0.35); }
+    .footer-disclaimer { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 300; color: rgba(250,246,239,0.25); max-width: 600px; line-height: 1.6; text-align: right; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.15s; }
+    .reveal-delay-2 { transition-delay: 0.3s; }
+
+    @media (max-width: 1024px) {
+      nav { padding: 0 2rem; }
+      .page-hero-inner { padding: 4rem 3rem; }
+      .about-story { padding: 6rem 3rem; }
+      .values-section, .credentials-band, .cta-strip, footer { padding-left: 3rem; padding-right: 3rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .page-hero { min-height: 75vh; }
+      .page-hero-inner { padding: 3rem 1.5rem; }
+      .hero-credential-strip { flex-wrap: wrap; gap: 0.6rem; }
+      .about-story { padding: 5rem 1.5rem; }
+      .story-inner { grid-template-columns: 1fr; gap: 0; }
+      .story-quote-mark { font-size: 6rem; line-height: 1; margin-bottom: 1.5rem; }
+      .values-section { padding: 4rem 1.5rem; }
+      .credentials-band { padding: 3rem 1.5rem; }
+      .values-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .credentials-inner { flex-direction: column; gap: 1rem; text-align: center; }
+      .credential-sep { display: none; }
+      .cta-strip { flex-direction: column; align-items: flex-start; gap: 2rem; padding: 4rem 1.5rem; }
+      .cta-strip-right { align-items: flex-start; }
+      footer { padding: 4rem 1.5rem 2rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; }
+      .footer-disclaimer { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-main"><span class="equity">EQUITY</span><span class="nest">NEST</span></div>
+      <div class="nav-logo-sub"><hr><span>CAPITAL</span><hr></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="loans.html">Loan Products</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="contact.html" class="btn-nav">Apply Now</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-grain"></div>
+    <div class="page-hero-inner">
+      <div class="section-label-row"><hr><span class="section-label">Our Story</span></div>
+      <h1>Built with purpose.<br>Led with expertise.</h1>
+      <p class="hero-tagline">A brokerage that works every deal start to finish — because your closing depends on it.</p>
+      <div class="hero-credential-strip">
+        <span>38 States</span>
+        <span class="hero-cred-dot">·</span>
+        <span>8 Programs</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="about-story">
+    <div class="story-inner">
+      <div class="story-quote-mark">&ldquo;</div>
+      <div class="story-body reveal">
+        <p>EquityNest Capital was built on a simple conviction: real estate investors and business owners deserve a mortgage partner who actually understands how they operate. Too often, clients with strong assets, healthy cash flow, and legitimate investment strategies are turned away by lenders who rely on a checklist that doesn't reflect modern business realities. We're detail-oriented, relationship-driven, and invested in the outcome of every file we touch. We work every loan from initial qualification through closing — building the file, structuring the deal, and managing the process so nothing falls through the cracks. We don't hand your deal off and walk away. We think of ourselves less as transactional brokers and more as deal architects who happen to get loans closed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values-section">
+    <div class="section-label-row"><hr><span class="section-label">What Drives Us</span></div>
+    <h2 class="reveal">The principles we work by.</h2>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <h3>Expertise First</h3>
+        <p>Non-QM lending is genuinely complex. Guidelines change, lender overlays shift, and deal structures vary dramatically across product types. We invest constantly in staying current, because knowing the nuances of each program is what allows us to find solutions when other brokers come up empty. You hire us for our knowledge, and we take that seriously.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <h3>Speed With Care</h3>
+        <p>Real estate deals are time-sensitive. We move quickly because we know what's at stake when a closing date is on the line. But speed without diligence is just sloppiness. We're thorough in everything we do, checking the details that can derail a loan before they become problems. Fast and careful are not opposites, and we prove that on every file.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-2">
+        <h3>Every Client Matters</h3>
+        <p>Whether this is your first investment property or your fiftieth, you receive the same level of attention, communication, and commitment. We don't have VIP tiers. We don't route smaller deals to junior staff. Every client gets our full effort, honest advice, and a broker who picks up the phone when they call. That's the standard we hold ourselves to.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MISSION PHOTO -->
+  <div class="mission-image">
+    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1400&q=80&fit=crop" alt="EquityNest Capital team">
+    <div class="mission-overlay">
+      <h2>Our mission is simple: get your deal across the finish line.</h2>
+      <p>Every investor has a deal that makes sense. Our job is to structure it, work it, and close it — every step of the way.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <h2 class="reveal">Ready to work with us?</h2>
+    <div class="cta-strip-right reveal">
+      <a href="contact.html" class="btn-gold-large">Start Your Application</a>
+      <a href="mailto:info@equitynestcapital.com" class="cta-email">info@equitynestcapital.com</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="text-decoration:none;">
+          <div class="nav-logo-main" style="color:var(--cream);"><span style="color:rgba(250,246,239,0.9);">EQUITY</span><span style="color:var(--gold);">NEST</span></div>
+          <div class="nav-logo-sub"><hr><span>CAPITAL</span><hr></div>
+        </a>
+        <p class="footer-tagline">Where capital finds a home.</p>
+        <a href="mailto:info@equitynestcapital.com" class="footer-email">info@equitynestcapital.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Loan Programs</h4>
+        <ul>
+          <li><a href="loans.html#dscr">DSCR Loans</a></li>
+          <li><a href="loans.html#fix-flip">Fix &amp; Flip</a></li>
+          <li><a href="loans.html#commercial">Commercial RE</a></li>
+          <li><a href="loans.html#sba">SBA Loans</a></li>
+          <li><a href="loans.html#str">Airbnb / STR</a></li>
+          <li><a href="loans.html#bank-statement">Bank Statement</a></li>
+          <li><a href="loans.html#cash-out">Cash-Out Refi</a></li>
+          <li><a href="loans.html#hard-money">Hard Money</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Apply Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-cta footer-col">
+        <h4>Get Pre-Qualified</h4>
+        <p>Same-day pre-qualification available for most programs. Tell us about your deal and we'll find your path to funding.</p>
+        <a href="contact.html" class="btn-gold-large">Start Application</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 EquityNest Capital. All rights reserved.</p>
+      <p class="footer-disclaimer">EquityNest Capital originates business-purpose loans only. All loans are for investment and commercial purposes. Lending available in 38 states. Not all borrowers will qualify. This is not an offer to extend credit.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      if (links.style.display === 'flex') { links.style.display = 'none'; }
+      else { links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--white);padding:2rem;gap:1.5rem;border-bottom:1px solid var(--border-light);z-index:999;'; }
+    });
+  </script>
+</body>
+</html>

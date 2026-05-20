@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply Now | Start Your Non-QM Loan Application | EquityNest Capital</title>
+  <meta name="description" content="Start your non-QM loan application with EquityNest Capital. DSCR, fix and flip, SBA, bank statement, and Airbnb STR loans in 38 states. Same-day pre-qualification.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.equitynestcapital.com/contact">
+  <meta property="og:title" content="Apply Now | EquityNest Capital">
+  <meta property="og:description" content="Start your non-QM or DSCR loan application. Same-day pre-qualification for most programs. Business-purpose lending in 38 states.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.equitynestcapital.com/contact">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0d0d0d; --near-black: #1a1a1a; --charcoal: #2c2c2c;
+      --soft-gray: #6b6b6b; --gold: #c9a96e; --gold-light: #d4b483;
+      --gold-dark: #a8893a; --cream: #faf6ef; --off-white: #f0ece3;
+      --white: #ffffff; --border-light: #e8e2d8;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--charcoal); background: var(--white); overflow-x: hidden; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--border-light); padding: 0 4rem; height: 72px; display: flex; align-items: center; justify-content: space-between; transition: box-shadow 0.3s ease; }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+    .nav-logo { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; line-height: 1; }
+    .nav-logo-main { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; }
+    .nav-logo-main span.equity { color: var(--charcoal); }
+    .nav-logo-main span.nest { color: var(--gold); }
+    .nav-logo-sub { display: flex; align-items: center; gap: 6px; margin-top: 3px; }
+    .nav-logo-sub hr { border: none; border-top: 1px solid var(--gold); width: 18px; }
+    .nav-logo-sub span { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 2.4rem; list-style: none; }
+    .nav-links a { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; color: var(--charcoal); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a.active { color: var(--gold); }
+    .btn-nav { background: var(--gold); color: var(--black); padding: 0.6rem 1.4rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); border-radius: 2px; transition: background 0.2s; }
+    .btn-nav:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: var(--white); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--charcoal); }
+
+    /* SPLIT LAYOUT */
+    .contact-layout {
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; padding-top: 72px;
+    }
+    .contact-left {
+      background: var(--black); padding: 6rem 5rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .contact-right {
+      background: var(--white); padding: 6rem 5rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+
+    .section-label-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+    .section-label-row hr { border: none; border-top: 1px solid var(--gold); width: 32px; }
+    .section-label { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+
+    .contact-left h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.5rem, 3.5vw, 3.8rem); color: var(--white); line-height: 1.1; margin-bottom: 1.5rem; }
+    .contact-left p { font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 300; color: rgba(250,246,239,0.65); line-height: 1.8; margin-bottom: 2rem; }
+
+    .contact-detail { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 1rem; }
+    .contact-detail-label { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); min-width: 60px; padding-top: 2px; }
+    .contact-detail-value { font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 300; color: rgba(250,246,239,0.8); }
+    .contact-detail-value a { color: var(--gold); text-decoration: none; }
+    .contact-detail-value a:hover { color: var(--gold-light); }
+
+    .next-steps { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(201,169,110,0.2); }
+    .next-steps h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--white); margin-bottom: 1.5rem; }
+    .step-list { list-style: none; }
+    .step-list li { display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: flex-start; }
+    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--gold); opacity: 0.6; line-height: 1; flex-shrink: 0; width: 24px; }
+    .step-text { font-family: 'Inter', sans-serif; font-size: 0.83rem; font-weight: 300; color: rgba(250,246,239,0.65); line-height: 1.7; }
+
+    /* FORM */
+    .contact-right h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.2rem; color: var(--charcoal); margin-bottom: 0.5rem; }
+    .contact-right .form-sub { font-family: 'Inter', sans-serif; font-size: 0.83rem; font-weight: 300; color: var(--soft-gray); margin-bottom: 2.5rem; line-height: 1.6; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 1rem; }
+    .form-group label { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 0.4rem; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 300;
+      color: var(--charcoal); background: var(--white);
+      border: 1px solid var(--border-light); padding: 0.75rem 1rem;
+      border-radius: 0; outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b6b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+    .btn-submit { background: var(--gold); color: var(--black); padding: 1rem 2.4rem; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--gold); border-radius: 2px; cursor: pointer; transition: background 0.2s; width: 100%; margin-top: 0.5rem; }
+    .btn-submit:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
+    .form-note { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 300; color: var(--soft-gray); margin-top: 0.8rem; line-height: 1.6; text-align: center; }
+
+    footer { background: var(--black); border-top: 1px solid rgba(201,169,110,0.25); padding: 5rem 6rem 3rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 4rem; margin-bottom: 4rem; }
+    .footer-brand .footer-tagline { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: rgba(250,246,239,0.5); margin-top: 1rem; font-weight: 300; }
+    .footer-brand .footer-email { display: block; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 300; color: var(--gold); text-decoration: none; margin-top: 0.8rem; }
+    .footer-col h4 { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 300; color: rgba(250,246,239,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-cta p { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 300; color: rgba(250,246,239,0.55); line-height: 1.7; margin-bottom: 1.2rem; }
+    .btn-gold-large { background: var(--gold); color: var(--black); padding: 1rem 2.4rem; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); border-radius: 2px; transition: background 0.2s; }
+    .btn-gold-large:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; }
+    .footer-copyright { font-family: 'Inter', sans-serif; font-size: 0.73rem; font-weight: 300; color: rgba(250,246,239,0.35); }
+    .footer-disclaimer { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 300; color: rgba(250,246,239,0.25); max-width: 600px; line-height: 1.6; text-align: right; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1024px) {
+      nav { padding: 0 2rem; }
+      .contact-left, .contact-right { padding: 5rem 3rem; }
+      footer { padding-left: 3rem; padding-right: 3rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-left, .contact-right { padding: 4rem 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { padding: 4rem 1.5rem 2rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; }
+      .footer-disclaimer { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-main"><span class="equity">EQUITY</span><span class="nest">NEST</span></div>
+      <div class="nav-logo-sub"><hr><span>CAPITAL</span><hr></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="loans.html">Loan Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="contact.html" class="btn-nav active">Apply Now</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="contact-layout">
+    <!-- LEFT -->
+    <div class="contact-left">
+      <div class="section-label-row"><hr><span class="section-label">Apply Now</span></div>
+      <h1>Let's Talk About Your Deal.</h1>
+      <p>Fill out the form and we'll reach out within one business day, often sooner. No hard pull, no commitment, just a real conversation about what we can do for your deal.</p>
+
+      <div class="contact-detail">
+        <span class="contact-detail-label">Email</span>
+        <span class="contact-detail-value"><a href="mailto:info@equitynestcapital.com">info@equitynestcapital.com</a></span>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-detail-label">Lending</span>
+        <span class="contact-detail-value">38 states, business-purpose loans</span>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-detail-label">Pre-Qual</span>
+        <span class="contact-detail-value">Same-day for most programs</span>
+      </div>
+
+      <div class="next-steps">
+        <h3>What happens next</h3>
+        <ul class="step-list">
+          <li>
+            <span class="step-num">1</span>
+            <span class="step-text">We review your submission and reach out within one business day to discuss your deal, ask any clarifying questions, and understand your goals.</span>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <span class="step-text">We shop your scenario across our lender network and come back with the best options for your specific situation, including rates, terms, and requirements.</span>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <span class="step-text">Once you choose a direction, we manage the full process from document collection through closing. You'll never wonder where your loan stands.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT / FORM -->
+    <div class="contact-right">
+      <h2>Start Your Application</h2>
+      <p class="form-sub">Tell us about yourself and your deal. The more detail you share, the faster we can find the right program for you.</p>
+
+      <form id="application-form" action="mailto:info@equitynestcapital.com" method="post" enctype="text/plain">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first_name" placeholder="First name" required>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last_name" placeholder="Last name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="loan-type">Loan Type</label>
+          <select id="loan-type" name="loan_type" required>
+            <option value="" disabled selected>Select a loan program</option>
+            <option value="dscr">DSCR Loan</option>
+            <option value="fix-flip">Fix &amp; Flip</option>
+            <option value="commercial">Commercial Real Estate</option>
+            <option value="sba">SBA Loan</option>
+            <option value="str">Airbnb / Short-Term Rental</option>
+            <option value="bank-statement">Bank Statement Loan</option>
+            <option value="cash-out">Cash-Out Refinance</option>
+            <option value="hard-money">Hard Money / Bridge Loan</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="state">Property State</label>
+            <input type="text" id="state" name="property_state" placeholder="e.g. Georgia">
+          </div>
+          <div class="form-group">
+            <label for="property-value">Est. Property Value</label>
+            <input type="text" id="property-value" name="property_value" placeholder="e.g. $350,000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="loan-amount">Estimated Loan Amount</label>
+          <input type="text" id="loan-amount" name="loan_amount" placeholder="e.g. $280,000">
+        </div>
+        <div class="form-group">
+          <label for="deal-details">Tell Us About Your Deal</label>
+          <textarea id="deal-details" name="deal_details" placeholder="Property type, current condition, rental income, your experience level, timeline, or anything else you think is relevant..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Submit Application</button>
+        <p class="form-note">No credit pull at this stage. We'll review your scenario and be in touch within one business day.</p>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="text-decoration:none;">
+          <div class="nav-logo-main" style="color:var(--cream);"><span style="color:rgba(250,246,239,0.9);">EQUITY</span><span style="color:var(--gold);">NEST</span></div>
+          <div class="nav-logo-sub"><hr><span>CAPITAL</span><hr></div>
+        </a>
+        <p class="footer-tagline">Where capital finds a home.</p>
+        <a href="mailto:info@equitynestcapital.com" class="footer-email">info@equitynestcapital.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Loan Programs</h4>
+        <ul>
+          <li><a href="loans.html#dscr">DSCR Loans</a></li>
+          <li><a href="loans.html#fix-flip">Fix &amp; Flip</a></li>
+          <li><a href="loans.html#commercial">Commercial RE</a></li>
+          <li><a href="loans.html#sba">SBA Loans</a></li>
+          <li><a href="loans.html#str">Airbnb / STR</a></li>
+          <li><a href="loans.html#bank-statement">Bank Statement</a></li>
+          <li><a href="loans.html#cash-out">Cash-Out Refi</a></li>
+          <li><a href="loans.html#hard-money">Hard Money</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-cta footer-col">
+        <h4>Quick Contact</h4>
+        <p>Have a quick question? Email us directly and we'll respond the same business day.</p>
+        <a href="mailto:info@equitynestcapital.com" class="btn-gold-large">Send Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 EquityNest Capital. All rights reserved.</p>
+      <p class="footer-disclaimer">EquityNest Capital originates business-purpose loans only. All loans are for investment and commercial purposes. Lending available in 38 states. Not all borrowers will qualify. This is not an offer to extend credit.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      if (links.style.display === 'flex') { links.style.display = 'none'; }
+      else { links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--white);padding:2rem;gap:1.5rem;border-bottom:1px solid var(--border-light);z-index:999;'; }
+    });
+  </script>
+</body>
+</html>
