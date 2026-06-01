@@ -649,6 +649,12 @@
       nav { padding: 0 1.5rem; }
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
+      /* When mobile menu is open, turn nav white and swap logo to dark */
+      nav.menu-open { background: var(--white) !important; border-bottom: 1px solid var(--border-light); }
+      nav.menu-open .nav-logo-main span.equity { color: var(--charcoal) !important; }
+      nav.menu-open .nav-logo-main span.nest { color: var(--gold) !important; }
+      nav.menu-open .nav-logo-sub span { color: var(--gold) !important; }
+      nav.menu-open .nav-logo-sub hr { border-color: var(--gold) !important; }
       .hero-content { padding: 0 1.8rem; padding-top: 80px; }
       .hero h1 { font-size: 3.2rem; }
       .hero-scroll { display: none; }
@@ -1106,9 +1112,24 @@
     (function() {
       const hamburger = document.getElementById('hamburger');
       const links = document.querySelector('.nav-links');
+      const nav = document.getElementById('main-nav');
       const OPEN_STYLE = 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:var(--white);padding:2rem 1.8rem;gap:1.6rem;border-bottom:1px solid var(--border-light);z-index:999;box-shadow:0 8px 32px rgba(0,0,0,0.1);';
-      function closeMenu() { links.removeAttribute('style'); links.setAttribute('data-open','false'); }
-      function openMenu()  { links.style.cssText = OPEN_STYLE; links.setAttribute('data-open','true'); }
+      function closeMenu() {
+        links.removeAttribute('style');
+        links.setAttribute('data-open','false');
+        nav.classList.remove('menu-open');
+        // restore hamburger span color to white if nav not scrolled
+        if (!nav.classList.contains('scrolled')) {
+          hamburger.querySelectorAll('span').forEach(s => s.style.background = '');
+        }
+      }
+      function openMenu() {
+        links.style.cssText = OPEN_STYLE;
+        links.setAttribute('data-open','true');
+        nav.classList.add('menu-open');
+        // switch spans to dark so they're visible on white nav
+        hamburger.querySelectorAll('span').forEach(s => s.style.background = 'var(--charcoal)');
+      }
       hamburger.addEventListener('click', e => { e.stopPropagation(); links.getAttribute('data-open')==='true' ? closeMenu() : openMenu(); });
       document.addEventListener('click', () => { if (links.getAttribute('data-open')==='true') closeMenu(); });
       links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
