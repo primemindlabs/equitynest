@@ -63,8 +63,8 @@
     .nav-links a.active:not(.btn-nav) { color: var(--gold); }
     .btn-nav { background: var(--gold); color: var(--black); padding: 0.6rem 1.4rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); border-radius: 2px; transition: background 0.2s; }
     .btn-nav:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: var(--white); }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--charcoal); }
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; background: none; border: none; padding: 0; width: 44px; height: 44px; -webkit-tap-highlight-color: transparent; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--charcoal); border-radius: 1px; }
 
     /* SPLIT LAYOUT */
     .contact-layout {
@@ -142,6 +142,9 @@
       nav { padding: 0 1.5rem; }
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
+      .btn-nav { display: block; width: 100%; text-align: center; padding: 0.9rem 1.4rem; min-height: 44px; }
+      .nav-links li { width: 100%; }
+      .nav-links a { min-height: 44px; display: flex; align-items: center; }
       .contact-layout { grid-template-columns: 1fr; }
       .contact-left { padding: 4rem 1.5rem; }
       .embed-header { padding: 2.5rem 1.5rem 1.5rem; }
@@ -175,7 +178,7 @@
       <li><a href="blog/index.html">Blog</a></li>
       <li><a href="contact.html" class="btn-nav active">Apply Now</a></li>
     </ul>
-    <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="contact-layout">
