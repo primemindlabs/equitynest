@@ -52,8 +52,17 @@
       display: flex; flex-direction: column; justify-content: center;
     }
     .contact-right {
-      background: var(--white); padding: 6rem 5rem;
-      display: flex; flex-direction: column; justify-content: center;
+      background: var(--white); padding: 0;
+      display: flex; flex-direction: column;
+    }
+    .embed-header {
+      padding: 3.5rem 4rem 2rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .app-iframe {
+      flex: 1; width: 100%; border: none;
+      min-height: 720px; display: block;
+      background: var(--white);
     }
 
     .section-label-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
@@ -76,37 +85,9 @@
     .step-num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--gold); opacity: 0.6; line-height: 1; flex-shrink: 0; width: 24px; }
     .step-text { font-family: 'Inter', sans-serif; font-size: 0.83rem; font-weight: 300; color: rgba(250,246,239,0.65); line-height: 1.7; }
 
-    /* FORM */
-    .contact-right h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.2rem; color: var(--charcoal); margin-bottom: 0.5rem; }
-    .contact-right .form-sub { font-family: 'Inter', sans-serif; font-size: 0.83rem; font-weight: 300; color: var(--soft-gray); margin-bottom: 2.5rem; line-height: 1.6; }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-    .form-group { display: flex; flex-direction: column; margin-bottom: 1rem; }
-    .form-group label { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 0.4rem; }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 300;
-      color: var(--charcoal); background: var(--white);
-      border: 1px solid var(--border-light); padding: 0.75rem 1rem;
-      border-radius: 0; outline: none;
-      transition: border-color 0.2s;
-      appearance: none;
-    }
-    /* iOS auto-zoom prevention — inputs must be ≥16px on mobile */
-    @media (max-width: 768px) {
-      .form-group input,
-      .form-group select,
-      .form-group textarea { font-size: 16px; }
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--gold); }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-    .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b6b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
-    .btn-submit { background: var(--gold); color: var(--black); padding: 1rem 2.4rem; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--gold); border-radius: 2px; cursor: pointer; transition: background 0.2s; width: 100%; margin-top: 0.5rem; }
-    .btn-submit:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
-    .form-note { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 300; color: var(--soft-gray); margin-top: 0.8rem; line-height: 1.6; text-align: center; }
+    /* EMBED HEADER */
+    .embed-header h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.2rem; color: var(--charcoal); margin-bottom: 0.5rem; }
+    .form-sub { font-family: 'Inter', sans-serif; font-size: 0.83rem; font-weight: 300; color: var(--soft-gray); line-height: 1.6; }
 
     footer { background: var(--black); border-top: 1px solid rgba(201,169,110,0.25); padding: 5rem 6rem 3rem; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 4rem; margin-bottom: 4rem; }
@@ -129,7 +110,8 @@
 
     @media (max-width: 1024px) {
       nav { padding: 0 2rem; }
-      .contact-left, .contact-right { padding: 5rem 3rem; }
+      .contact-left { padding: 5rem 3rem; }
+      .embed-header { padding: 3rem 3rem 1.8rem; }
       footer { padding-left: 3rem; padding-right: 3rem; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
     }
@@ -138,8 +120,9 @@
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
       .contact-layout { grid-template-columns: 1fr; }
-      .contact-left, .contact-right { padding: 4rem 1.5rem; }
-      .form-row { grid-template-columns: 1fr; }
+      .contact-left { padding: 4rem 1.5rem; }
+      .embed-header { padding: 2.5rem 1.5rem 1.5rem; }
+      .app-iframe { min-height: 600px; }
       .contact-detail { flex-direction: column; gap: 0.3rem; }
       .contact-detail-label { min-width: unset; }
       footer { padding: 4rem 1.5rem 2rem; }
@@ -148,7 +131,9 @@
       .footer-disclaimer { text-align: left; }
     }
     @media (max-width: 480px) {
-      .contact-left, .contact-right { padding: 3.5rem 1.2rem; }
+      .contact-left { padding: 3.5rem 1.2rem; }
+      .embed-header { padding: 2rem 1.2rem 1.2rem; }
+      .app-iframe { min-height: 560px; }
       .contact-left h1 { font-size: 2.4rem; }
       footer { padding: 3.5rem 1.2rem 2rem; }
     }
@@ -209,67 +194,20 @@
       </div>
     </div>
 
-    <!-- RIGHT / FORM -->
+    <!-- RIGHT / APPLICATION EMBED -->
     <div class="contact-right">
-      <h2>Start Your Application</h2>
-      <p class="form-sub">Tell us about yourself and your deal. The more detail you share, the faster we can find the right program for you.</p>
-
-      <form id="application-form" action="mailto:info@equitynestcapital.com" method="post" enctype="text/plain">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" name="first_name" placeholder="First name" required>
-          </div>
-          <div class="form-group">
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="last_name" placeholder="Last name" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="loan-type">Loan Type</label>
-          <select id="loan-type" name="loan_type" required>
-            <option value="" disabled selected>Select a loan program</option>
-            <option value="dscr">DSCR Loan</option>
-            <option value="fix-flip">Fix &amp; Flip</option>
-            <option value="commercial">Commercial Real Estate</option>
-            <option value="sba">SBA Loan</option>
-            <option value="str">Airbnb / Short-Term Rental</option>
-            <option value="bank-statement">Bank Statement Loan</option>
-            <option value="cash-out">Cash-Out Refinance</option>
-            <option value="hard-money">Hard Money / Bridge Loan</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="state">Property State</label>
-            <input type="text" id="state" name="property_state" placeholder="e.g. Georgia">
-          </div>
-          <div class="form-group">
-            <label for="property-value">Est. Property Value</label>
-            <input type="text" id="property-value" name="property_value" placeholder="e.g. $350,000">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="loan-amount">Estimated Loan Amount</label>
-          <input type="text" id="loan-amount" name="loan_amount" placeholder="e.g. $280,000">
-        </div>
-        <div class="form-group">
-          <label for="deal-details">Tell Us About Your Deal</label>
-          <textarea id="deal-details" name="deal_details" placeholder="Property type, current condition, rental income, your experience level, timeline, or anything else you think is relevant..."></textarea>
-        </div>
-        <button type="submit" class="btn-submit">Submit Application</button>
-        <p class="form-note">No credit pull at this stage. We'll review your scenario and be in touch within one business day.</p>
-      </form>
+      <div class="embed-header">
+        <h2>Start Your Application</h2>
+        <p class="form-sub">Complete the form below to get started. No hard credit pull at this stage.</p>
+      </div>
+      <iframe
+        src="https://thelendingvillage.my1003app.com/1289579/inquiry"
+        class="app-iframe"
+        title="EquityNest Capital Loan Application"
+        frameborder="0"
+        allow="fullscreen"
+        loading="lazy"
+      ></iframe>
     </div>
   </div>
 
