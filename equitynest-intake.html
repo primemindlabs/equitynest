@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>EquityNest Capital — Get Pre-Qualified</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#c8a45a;
+  --gold-lt:#e0bc7a;
+  --gold-glow:rgba(200,164,90,.12);
+  --gold-bdr:rgba(200,164,90,.28);
+  --bg:#030712;
+  --bg2:#0a1220;
+  --bg3:#0d1828;
+  --text:#f2f4f8;
+  --t2:rgba(242,244,248,.55);
+  --t3:rgba(242,244,248,.22);
+  --bdr:rgba(255,255,255,.07);
+  --grn:#22c55e;
+  --r:12px;
+  --t:.22s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{height:100%;-webkit-font-smoothing:antialiased}
+body{
+  font-family:'Inter',-apple-system,sans-serif;
+  background:var(--bg);color:var(--text);
+  height:100%;min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* grain - pointer-events off so it never blocks interaction */
+body::after{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  z-index:9998;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 width%3D%27200%27 height%3D%27200%27%3E%3Cfilter id%3D%27n%27%3E%3CfeTurbulence type%3D%27fractalNoise%27 baseFrequency%3D%270.9%27 numOctaves%3D%274%27 stitchTiles%3D%27stitch%27%2F%3E%3C%2Ffilter%3E%3Crect width%3D%27200%27 height%3D%27200%27 filter%3D%27url(%23n)%27%2F%3E%3C%2Fsvg%3E");
+  opacity:.025;
+}
+
+/* glows */
+.glow-gold{
+  position:fixed;z-index:0;pointer-events:none;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,164,90,.10) 0%,transparent 65%);
+  bottom:-180px;left:-140px;filter:blur(22px);
+}
+.glow-blue{
+  position:fixed;z-index:0;pointer-events:none;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(30,60,160,.10) 0%,transparent 65%);
+  top:-100px;right:80px;filter:blur(30px);
+}
+
+/* header */
+.hdr{
+  position:fixed;top:0;left:0;right:0;z-index:200;height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;
+  background:rgba(3,7,18,.85);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.logo-n{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;line-height:1}
+.logo-s{font-size:7.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:3px}
+.hdr-ph{
+  display:flex;align-items:center;gap:6px;
+  font-size:12.5px;font-weight:600;color:var(--text);
+  padding:7px 16px;border:1px solid var(--gold-bdr);border-radius:40px;
+  text-decoration:none;transition:all var(--t);
+}
+.hdr-ph:hover{background:var(--gold-glow);color:var(--gold-lt)}
+.hdr-ph svg{flex-shrink:0}
+
+/* progress */
+.prog-wrap{
+  position:fixed;top:60px;left:0;right:0;z-index:190;
+  padding:10px 24px 0;
+  background:rgba(3,7,18,.85);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+}
+.prog-bars{display:flex;gap:5px;margin-bottom:6px}
+.pbar{flex:1;height:2.5px;border-radius:3px;background:rgba(255,255,255,.09);transition:background .35s}
+.pbar.on{background:var(--gold)}
+.pbar.dn{background:rgba(200,164,90,.38)}
+.prog-lbl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(200,164,90,.7);padding-bottom:8px}
+
+/* main content area */
+.main{
+  position:relative;z-index:1;
+  min-height:100vh;
+  padding:108px 24px 90px;
+  display:flex;align-items:center;justify-content:center;
+}
+.form-shell{width:100%;max-width:420px}
+
+/* step */
+.step{display:none;opacity:0}
+.step.on{display:block;opacity:1;animation:slin .26s ease both}
+@keyframes slin{from{transform:translateX(12px);opacity:.4}to{transform:translateX(0);opacity:1}}
+
+.step-q{
+  font-size:clamp(19px,4.5vw,24px);
+  font-weight:900;letter-spacing:-.025em;
+  color:#fff;line-height:1.15;margin-bottom:6px;
+}
+.step-q em{
+  font-style:italic;
+  font-family:'Playfair Display',Georgia,serif;
+  color:var(--gold);font-weight:600;
+}
+.step-sub{font-size:13px;color:var(--t2);margin-bottom:22px;line-height:1.5}
+
+/* icon cards 2x2 */
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}
+.icard{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  padding:18px 12px 14px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  cursor:pointer;transition:all var(--t);
+  user-select:none;
+}
+.icard:hover{border-color:rgba(200,164,90,.42);background:rgba(200,164,90,.06)}
+.icard.sel{
+  border-color:var(--gold);background:rgba(200,164,90,.09);
+  box-shadow:inset 0 0 0 1px rgba(200,164,90,.28);
+}
+.icard svg{width:28px;height:28px;color:rgba(200,164,90,.7);transition:color var(--t)}
+.icard.sel svg{color:var(--gold-lt)}
+.icard-lbl{
+  font-size:11.5px;font-weight:600;color:rgba(242,244,248,.7);
+  text-align:center;line-height:1.3;transition:color var(--t);
+}
+.icard.sel .icard-lbl{color:var(--gold-lt)}
+.tap-hint{font-size:10px;color:var(--t3);text-align:center;margin-top:4px}
+
+/* fields */
+.flds{display:flex;flex-direction:column;gap:11px;margin-bottom:18px}
+.fld label{
+  display:block;font-size:9.5px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--t2);margin-bottom:5px;
+}
+.finput{
+  width:100%;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.09);border-radius:9px;
+  padding:13px 14px;color:var(--text);
+  font-size:14px;font-weight:500;font-family:inherit;
+  outline:none;-webkit-appearance:none;appearance:none;
+  transition:border-color var(--t),background var(--t),box-shadow var(--t);
+}
+.finput:focus{
+  border-color:var(--gold);
+  background:rgba(200,164,90,.07);
+  box-shadow:0 0 0 3px rgba(200,164,90,.13);
+}
+.finput::placeholder{color:rgba(255,255,255,.2)}
+select.finput{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%238b9ab0' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-repeat:no-repeat;background-position:right 12px center;
+  background-size:18px;padding-right:36px;cursor:pointer;
+}
+select.finput option{background:#0d1828;color:var(--text)}
+
+/* btns */
+.btn-next{
+  width:100%;display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--gold);color:#030712;
+  font-weight:800;font-size:14px;font-family:inherit;
+  padding:16px;border-radius:10px;border:none;cursor:pointer;
+  transition:all var(--t);letter-spacing:.01em;
+}
+.btn-next:hover{background:var(--gold-lt);transform:translateY(-1px);box-shadow:0 8px 24px rgba(200,164,90,.38)}
+.btn-next:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-back{
+  display:flex;align-items:center;gap:5px;
+  background:none;border:none;font-family:inherit;
+  color:var(--t2);font-size:12px;cursor:pointer;
+  padding:9px 0;margin-top:5px;
+  transition:color var(--t);
+}
+.btn-back:hover{color:var(--text)}
+.fdisclaim{font-size:10px;color:var(--t3);text-align:center;margin-top:14px;line-height:1.55}
+
+/* thank you */
+.ty{display:none;text-align:center;padding:8px 0;opacity:0}
+.ty.on{display:block;opacity:1;animation:slin .3s ease both}
+.ty-ck{
+  width:60px;height:60px;border-radius:50%;
+  background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+}
+.ty-h{font-size:26px;font-weight:900;letter-spacing:-.03em;margin-bottom:8px}
+.ty-s{font-size:14px;color:var(--t2);margin-bottom:26px;line-height:1.65;max-width:300px;margin-left:auto;margin-right:auto}
+.ty-call{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--gold-glow);border:1px solid var(--gold-bdr);
+  border-radius:14px;padding:16px;
+  color:var(--gold-lt);font-size:19px;font-weight:700;
+  text-decoration:none;transition:all var(--t);
+}
+.ty-call:hover{background:rgba(200,164,90,.18)}
+
+/* mobile sticky */
+.mob{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:150;
+  background:rgba(3,7,18,.97);border-top:1px solid rgba(255,255,255,.06);
+  padding:10px 14px;gap:8px;
+}
+.mb{
+  flex:1;text-align:center;padding:14px;
+  border-radius:10px;font-weight:700;font-size:13px;
+  font-family:inherit;cursor:pointer;border:none;text-decoration:none;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.mb.g{background:var(--gold);color:#030712}
+.mb.o{border:1px solid rgba(255,255,255,.1);color:var(--t2);background:transparent}
+
+/* exit modal */
+.mbg{
+  display:none;position:fixed;inset:0;
+  background:rgba(3,7,18,.93);z-index:500;
+  backdrop-filter:blur(8px);
+  align-items:center;justify-content:center;padding:20px;
+}
+.mbg.on{display:flex}
+.mbox{
+  background:var(--bg3);border:1px solid var(--gold-bdr);
+  border-radius:20px;padding:32px 26px;
+  max-width:400px;width:100%;position:relative;
+  box-shadow:0 40px 80px rgba(0,0,0,.7);
+  animation:slin .3s ease;
+}
+.mx{
+  position:absolute;top:14px;right:16px;
+  background:none;border:none;color:var(--t2);
+  font-size:22px;cursor:pointer;padding:4px;
+  transition:color var(--t);font-family:inherit;
+}
+.mx:hover{color:var(--text)}
+.m-ey{font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.m-h{font-size:19px;font-weight:800;letter-spacing:-.02em;margin-bottom:7px}
+.m-s{font-size:13px;color:var(--t2);margin-bottom:20px;line-height:1.6}
+.m-row{display:flex;gap:8px}
+.m-in{
+  flex:1;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.09);border-radius:9px;
+  padding:13px 14px;color:var(--text);font-size:14px;
+  font-family:inherit;outline:none;
+  transition:border-color var(--t),box-shadow var(--t);
+}
+.m-in:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,164,90,.13)}
+.m-btn{
+  background:var(--gold);color:#030712;
+  font-weight:700;font-size:13px;font-family:inherit;
+  padding:13px 18px;border-radius:9px;border:none;
+  white-space:nowrap;cursor:pointer;transition:all var(--t);
+}
+.m-btn:hover{background:var(--gold-lt)}
+.m-skip{display:block;text-align:center;margin-top:13px;font-size:11px;color:var(--t3);cursor:pointer;transition:color var(--t)}
+.m-skip:hover{color:var(--t2)}
+
+/* shake */
+@keyframes shake{
+  0%,100%{transform:translateX(0)}
+  20%{transform:translateX(-8px)}
+  40%{transform:translateX(8px)}
+  60%{transform:translateX(-4px)}
+  80%{transform:translateX(4px)}
+}
+
+@media(max-width:480px){
+  .main{padding:106px 18px 80px}
+  .mob{display:flex}
+  .hdr{padding:0 16px}
+  .prog-wrap{padding:10px 16px 0}
+  .step-q{font-size:21px}
+  .icard{padding:15px 10px 12px}
+}
+@media(max-width:360px){
+  .hdr-ph span{display:none}
+  .step-q{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="glow-gold"></div>
+<div class="glow-blue"></div>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div>
+    <div class="logo-n">EquityNest Capital</div>
+    <div class="logo-s">Where capital finds a home.</div>
+  </div>
+  <a href="tel:+12812709600" class="hdr-ph">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.76 19.79 19.79 0 01.4 1.09 2 2 0 012 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/>
+    </svg>
+    <span>(281) 270-9600</span>
+  </a>
+</header>
+
+<!-- PROGRESS -->
+<div class="prog-wrap" id="progWrap">
+  <div class="prog-bars">
+    <div class="pbar on" id="pb0"></div>
+    <div class="pbar" id="pb1"></div>
+    <div class="pbar" id="pb2"></div>
+    <div class="pbar" id="pb3"></div>
+  </div>
+  <div class="prog-lbl" id="progLbl">Step 1 of 4</div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+  <div class="form-shell">
+
+    <form id="mainForm" action="https://formsubmit.co/info@equitynestcapital.com" method="POST">
+      <input type="hidden" name="_subject" value="New Investor Lead — EquityNest Capital">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="source" value="Ad Intake Page">
+      <input type="hidden" id="h_property" name="property_type" value="">
+      <input type="hidden" id="h_goal" name="investment_goal" value="">
+      <input type="hidden" id="h_program" name="recommended_program" value="">
+      <input type="hidden" id="h_utm" name="utm_params" value="">
+      <input type="hidden" id="h_url" name="page_url" value="">
+
+      <!-- ── STEP 1: Property type ── -->
+      <div class="step on" id="s0">
+        <h1 class="step-q">What type of property<br>is <em>this deal?</em></h1>
+        <p class="step-sub">No wrong answer — we work with all of them.</p>
+        <div class="card-grid">
+
+          <div class="icard" onclick="pick(this,'s0','Single-family rental')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            <span class="icard-lbl">Single-family<br>rental (SFR)</span>
+          </div>
+
+          <div class="icard" onclick="pick(this,'s0','Multi-family or commercial')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/><path d="M6 11h.01M6 15h.01M10 11h.01M10 15h.01M18 11h.01M18 15h.01"/>
+            </svg>
+            <span class="icard-lbl">Multi-family /<br>commercial</span>
+          </div>
+
+          <div class="icard" onclick="pick(this,'s0','Short-term rental (Airbnb / STR)')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+            </svg>
+            <span class="icard-lbl">Short-term rental<br>(Airbnb / STR)</span>
+          </div>
+
+          <div class="icard" onclick="pick(this,'s0','Fix & flip or renovation project')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+            </svg>
+            <span class="icard-lbl">Fix &amp; flip /<br>renovation</span>
+          </div>
+
+        </div>
+        <p class="tap-hint">Tap to select and continue</p>
+      </div>
+
+      <!-- ── STEP 2: Goal ── -->
+      <div class="step" id="s1">
+        <h1 class="step-q">What's your <em>goal</em><br>with this property?</h1>
+        <p class="step-sub">We structure the financing around your strategy.</p>
+        <div class="card-grid">
+
+          <div class="icard" onclick="pick(this,'s1','Purchase / acquire')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.96-1.61L23 6H6"/>
+            </svg>
+            <span class="icard-lbl">Purchase /<br>acquire it</span>
+          </div>
+
+          <div class="icard" onclick="pick(this,'s1','Cash-out refinance')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <rect x="2" y="5" width="20" height="14" rx="2"/>
+              <line x1="2" y1="10" x2="22" y2="10"/>
+            </svg>
+            <span class="icard-lbl">Cash-out /<br>pull equity</span>
+          </div>
+
+          <div class="icard" onclick="pick(this,'s1','Rate & term refinance')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/>
+              <path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/>
+            </svg>
+            <span class="icard-lbl">Refinance<br>existing loan</span>
+          </div>
+
+          <div class="icard" onclick="pick(this,'s1','Exploring options')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            <span class="icard-lbl">Just exploring<br>options</span>
+          </div>
+
+        </div>
+        <p class="tap-hint">Tap to select and continue</p>
+        <button type="button" class="btn-back" onclick="goTo(0)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Back
+        </button>
+      </div>
+
+      <!-- ── STEP 3: Deal details ── -->
+      <div class="step" id="s2">
+        <h1 class="step-q">Tell us about<br><em>the deal.</em></h1>
+        <p class="step-sub">A few quick numbers and we can find your best path to funding.</p>
+        <div class="flds">
+          <div class="fld">
+            <label for="loan_amt">Estimated loan amount</label>
+            <select class="finput" id="loan_amt" name="loan_amount" required>
+              <option value="" disabled selected>Select a range</option>
+              <option>Under $100,000</option>
+              <option>$100,000 – $250,000</option>
+              <option>$250,000 – $500,000</option>
+              <option>$500,000 – $1,000,000</option>
+              <option>$1M – $3M</option>
+              <option>$3M+</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label for="prop_state">Property state</label>
+            <select class="finput" id="prop_state" name="property_state" required>
+              <option value="" disabled selected>Select state</option>
+              <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label for="credit">Estimated credit score</label>
+            <select class="finput" id="credit" name="credit_score" required>
+              <option value="" disabled selected>Select range</option>
+              <option>740 or above</option>
+              <option>700 – 739</option>
+              <option>660 – 699</option>
+              <option>620 – 659</option>
+              <option>Below 620</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" class="btn-next" onclick="goStep3()">
+          Continue
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button type="button" class="btn-back" onclick="goTo(1)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Back
+        </button>
+      </div>
+
+      <!-- ── STEP 4: Contact ── -->
+      <div class="step" id="s3">
+        <h1 class="step-q">Almost there —<br><em>how do we reach you?</em></h1>
+        <p class="step-sub">No hard credit pull. No commitment. We'll be in touch within one business day.</p>
+        <div class="flds">
+          <div class="fld">
+            <label for="fname">Full name</label>
+            <input type="text" class="finput" id="fname" name="name" placeholder="Your full name" required autocomplete="name">
+          </div>
+          <div class="fld">
+            <label for="fphone">Phone number</label>
+            <input type="tel" class="finput" id="fphone" name="phone" placeholder="(555) 000-0000" required autocomplete="tel">
+          </div>
+          <div class="fld">
+            <label for="femail">Email address</label>
+            <input type="email" class="finput" id="femail" name="email" placeholder="you@example.com" required autocomplete="email">
+          </div>
+        </div>
+        <button type="submit" class="btn-next" id="subBtn">
+          Get Pre-Qualified Now
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button type="button" class="btn-back" onclick="goTo(2)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Back
+        </button>
+        <p class="fdisclaim">Your information is never sold or shared. By submitting you agree to be contacted by EquityNest Capital regarding your inquiry. All programs are for investment and business-purpose properties only.</p>
+      </div>
+    </form>
+
+    <!-- THANK YOU -->
+    <div class="ty" id="tyScreen">
+      <div class="ty-ck">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h2 class="ty-h">You're in.</h2>
+      <p class="ty-s">We'll review your deal and reach out within one business day — often the same day. If you need us sooner:</p>
+      <a href="tel:+12812709600" class="ty-call">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.76 19.79 19.79 0 01.4 1.09 2 2 0 012 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        (281) 270-9600
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer style="position:relative;z-index:1;padding:20px 24px 90px;border-top:1px solid var(--bdr);margin-top:20px">
+  <p style="font-size:9.5px;color:var(--t3);line-height:1.7;max-width:640px;margin:0 auto;text-align:center">
+    EquityNest Capital originates business-purpose loans only. All loan programs are for investment, commercial, or non-owner-occupied properties and are exempt from consumer mortgage lending laws. Lending available in 38 states. Not all borrowers will qualify. This is not a commitment to lend or an offer to extend credit. Rates and terms vary. Equal Opportunity Lender. © 2026 EquityNest Capital.
+  </p>
+</footer>
+
+<!-- MOBILE STICKY -->
+<div class="mob" id="mobBar">
+  <a href="#mainForm" class="mb g" onclick="return false;" id="mobCta">Get Pre-Qualified</a>
+  <a href="tel:+12812709600" class="mb o">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.76 19.79 19.79 0 01.4 1.09 2 2 0 012 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Now
+  </a>
+</div>
+
+<!-- EXIT MODAL -->
+<div class="mbg" id="exitBg">
+  <div class="mbox">
+    <button class="mx" onclick="closeModal()" aria-label="Close">×</button>
+    <div class="m-ey">Before You Go</div>
+    <div class="m-h">Get current program rates sent to you.</div>
+    <div class="m-s">Drop your email and we'll send DSCR, Non-QM, and fix &amp; flip rate ranges for your deal type within one business day. No pull, no commitment.</div>
+    <form id="exitForm" action="https://formsubmit.co/info@equitynestcapital.com" method="POST">
+      <input type="hidden" name="_subject" value="Exit Intent — EquityNest Intake Page">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="m-row">
+        <input type="email" class="m-in" name="email" placeholder="your@email.com" required>
+        <button type="submit" class="m-btn">Send Rates</button>
+      </div>
+    </form>
+    <span class="m-skip" onclick="closeModal()">No thanks, I'll skip the free rates.</span>
+  </div>
+</div>
+
+<script>
+// ── UTM CAPTURE ──
+(function(){
+  var p=new URLSearchParams(location.search);
+  var u=['utm_source','utm_medium','utm_campaign','utm_content','utm_term']
+    .reduce(function(a,k){if(p.get(k))a[k]=p.get(k);return a},{});
+  document.getElementById('h_utm').value=JSON.stringify(u);
+  document.getElementById('h_url').value=location.href;
+})();
+
+// ── PROGRAM MAPPING ──
+var propSel='', goalSel='';
+function mapProgram(){
+  var p=propSel, g=goalSel;
+  if(p.indexOf('Fix')>-1) return 'Fix & Flip / Bridge Loan';
+  if(p.indexOf('Short-term')>-1) return 'STR DSCR Loan';
+  if(p.indexOf('Multi')>-1){
+    if(g.indexOf('Cash-out')>-1) return 'Commercial Cash-Out / Non-QM';
+    return 'Commercial / Multi-family Loan';
+  }
+  if(g.indexOf('Cash-out')>-1) return 'DSCR Cash-Out Refinance';
+  if(g.indexOf('Refinance')>-1) return 'DSCR Rate & Term Refinance';
+  if(g.indexOf('Exploring')>-1) return 'Pre-qualification Review';
+  return 'DSCR Purchase Loan';
+}
+
+// ── PROGRESS ──
+var labels=['Step 1 of 4','Step 2 of 4','Step 3 of 4','Step 4 of 4'];
+function updProg(n){
+  [0,1,2,3].forEach(function(i){
+    var b=document.getElementById('pb'+i);
+    b.classList.toggle('on',i===n);
+    b.classList.toggle('dn',i<n);
+  });
+  document.getElementById('progLbl').textContent=labels[n]||'';
+}
+
+// ── STEP NAVIGATION ──
+var cur=0;
+function goTo(n){
+  document.getElementById('s'+cur).classList.remove('on');
+  document.getElementById('s'+n).classList.add('on');
+  cur=n;
+  updProg(n);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── CARD SELECTION ──
+function pick(el, stepId, val){
+  // store value
+  if(stepId==='s0'){
+    propSel=val;
+    document.getElementById('h_property').value=val;
+  } else {
+    goalSel=val;
+    document.getElementById('h_goal').value=val;
+    document.getElementById('h_program').value=mapProgram();
+  }
+  // visual
+  var cards=el.closest('.card-grid').querySelectorAll('.icard');
+  cards.forEach(function(c){c.classList.remove('sel')});
+  el.classList.add('sel');
+  // advance
+  var nextStep=stepId==='s0'?1:2;
+  setTimeout(function(){goTo(nextStep);},280);
+}
+
+// ── STEP 3 VALIDATION ──
+function goStep3(){
+  var a=document.getElementById('loan_amt').value;
+  var b=document.getElementById('prop_state').value;
+  var c=document.getElementById('credit').value;
+  if(!a||!b||!c){
+    document.getElementById('s2').style.animation='none';
+    void document.getElementById('s2').offsetWidth;
+    document.getElementById('s2').style.animation='shake .4s ease';
+    setTimeout(function(){document.getElementById('s2').style.animation='';},500);
+    return;
+  }
+  goTo(3);
+}
+
+// ── FORM SUBMIT ──
+document.getElementById('mainForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var btn=document.getElementById('subBtn');
+  btn.innerHTML='Submitting…';btn.disabled=true;
+  fetch(this.action,{
+    method:'POST',body:new FormData(this),
+    headers:{'Accept':'application/json'}
+  }).then(function(){
+    document.getElementById('mainForm').style.display='none';
+    document.getElementById('tyScreen').classList.add('on');
+    document.getElementById('progWrap').style.display='none';
+    // hide mobile sticky on thank you
+    document.getElementById('mobBar').style.display='none';
+  }).catch(function(){
+    btn.innerHTML='Get Pre-Qualified Now →';btn.disabled=false;
+  });
+});
+
+// ── EXIT INTENT ──
+var exShown=false;
+function showModal(){if(!exShown&&cur<3){exShown=true;document.getElementById('exitBg').classList.add('on');}}
+document.addEventListener('mouseleave',function(e){if(e.clientY<5)showModal();});
+setTimeout(showModal,32000);
+function closeModal(){document.getElementById('exitBg').classList.remove('on');}
+document.getElementById('exitBg').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.getElementById('exitForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}})
+  .then(function(){
+    document.getElementById('exitForm').innerHTML='<p style="color:#22c55e;text-align:center;padding:12px 0;font-weight:600">✓ Sent — check your inbox within one business day.</p>';
+  });
+});
+
+// ── MOBILE STICKY (scroll to top of form) ──
+document.getElementById('mobCta').addEventListener('click',function(){
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+</script>
+</body>
+</html>
