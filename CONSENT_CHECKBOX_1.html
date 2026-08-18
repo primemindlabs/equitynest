@@ -1,0 +1,42 @@
+<!--
+  THE CONSENT CHECKBOX
+
+  Use this exact wording on the web application form AND in the Facebook lead form
+  custom disclaimer. It has to be identical in both places, because the A2P message flow
+  description we submit to Twilio quotes it, and a reviewer may compare.
+
+  Three rules that are not stylistic:
+    1. The box starts UNCHECKED. A pre-checked box is an A2P rejection and a TCPA problem.
+    2. It is its own checkbox. Do not bundle it with terms of service acceptance.
+    3. Submitting the form without ticking it must still work. Consent to texts cannot
+       be a condition of applying.
+-->
+
+<div class="consent-block">
+  <label>
+    <input type="checkbox" name="sms_consent" value="yes">
+    <span>
+      I agree to receive calls and text messages, including autodialed and prerecorded
+      messages, from EquityNest Capital at the phone number provided. Consent is not a
+      condition of any purchase or of loan approval. Message frequency varies. Message
+      and data rates may apply. Reply HELP for help or STOP to opt out. See our
+      <a href="/privacy.html" target="_blank">Privacy Policy</a> and
+      <a href="/terms.html" target="_blank">Terms of Service</a>.
+    </span>
+  </label>
+</div>
+
+<!--
+  SEPARATE checkbox, separate consent. Do not merge these two.
+-->
+
+<div class="consent-block">
+  <label>
+    <input type="checkbox" name="terms_accepted" value="yes" required>
+    <span>
+      I have read and agree to the
+      <a href="/terms.html" target="_blank">Terms of Service</a> and
+      <a href="/privacy.html" target="_blank">Privacy Policy</a>.
+    </span>
+  </label>
+</div>
